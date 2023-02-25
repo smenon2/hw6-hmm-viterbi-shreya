@@ -25,11 +25,13 @@ Functional Characterization Report
 Please evaluate the project deliverable and briefly answer the following speculative question, with an eye to the project's limitations as related to the theory, model design, experimental data (i.e., biology and technology). We recommend answers between 2-6 sentences. It is OK if you are not familiar already with this biological user case; you can receive full points for your best-effort answer.
 
 1. Speculate how the progenitor cardiomyocyte Hidden Markov Model and primitive cardiomyocyte regulatory observations and inferred hidden states might change if the model design's sliding window (default set to 60 kilobases) were to increase or decrease?
+I think that if the sliding window were to change it would change the accuracy of the model or the parameters of the HMM. For example, it might be less likely for hidden state to transition to another state if the windows are smaller than the expected size of atac peaks or cCREs. If you increase the window, it might increase the transition probabilities to switch between states. 
 
 2. How would you recommend integrating additional genomics data (i.e., histone and transcription factor ChIP-seq data) to update or revise the progenitor cardiomyocyte Hidden Markov Model? In your updated/revised model, how would you define the observation and hidden states, and the prior, transition, and emission probabilities? Using the updated/revised design, what new testable hypotheses would you be able to evaluate and/or disprove?
+I think you can integrate additional genomics data to add an additional hidden state to the HMM. For example, you could consider trying to decode between encode-atac, atac, and TF-binding where TF-binding refers to the output of a TF Chip-seq assay. 
 
 3. Following functional characterization (i.e., MPRA or CRISPRi/a) of progenitor and primitive cardiomyocytes, consider all possible scenarios for recommending how to update or revise our genomic annotation for *cis*-candidate regulatory elements (cCREs) and candidate regulatory elements (CREs)?
-
+After functional characterization, we might have a better estimate for the emmision, transmission, and prior probabilties since we might more information that we can use to calculate these values. This would improve our overall ability to decode between the hidden states. 
 
 Models Package 
 ======================
